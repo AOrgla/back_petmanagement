@@ -5,9 +5,9 @@ import lombok.Getter;
 @Getter
 public enum PetError {
 
-    INCORRECT_CREDENTIALS("Sellist kasutajanime või parooli ei leitud", "001"),
-    USERNAME_EXISTS("Selle nimega kasutaja on juba registreeritud, palun vali uus kasutajanimi.", "002"),
-    EMAIL_EXISTS("See meiliaadress on juba kasutusel.", "003");
+    INCORRECT_CREDENTIALS("Username or password does not exist", "001"),
+    USERNAME_EXISTS("Selected username is already in use", "002"),
+    EMAIL_EXISTS("Mail address is already in use", "003");
 
     private final String message;
     private final String errorCode;
@@ -16,5 +16,4 @@ public enum PetError {
         this.message = message;
         this.errorCode = errorCode;
     }
-
 }

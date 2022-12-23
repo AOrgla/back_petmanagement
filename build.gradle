@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '19'
 
 configurations {
 	compileOnly {
@@ -28,7 +28,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	//Swagger
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
 	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
 	implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.7'
 	//  MapStruct
