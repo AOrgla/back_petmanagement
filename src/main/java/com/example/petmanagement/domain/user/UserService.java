@@ -1,6 +1,7 @@
 package com.example.petmanagement.domain.user;
 
 
+import com.example.petmanagement.validation.Validation;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -14,6 +15,7 @@ public class UserService {
 
     public User getValidUser(String username, String password) {
         Optional<User> userOptional = userRepository.findUserBy(username, password);
+        Validation.validateUserCredentials(userOptional);
         return userOptional.get();
     }
 

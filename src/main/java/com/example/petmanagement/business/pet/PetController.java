@@ -25,12 +25,6 @@ public class PetController {
         return petManagementService.getPetsInfo(userId);
     }
 
-    @GetMapping("/petdropdown")
-    @Operation(summary = "Retrieves data from database to populate drop-down menus")
-    public void getPetInfo() {
-
-    }
-
     @PutMapping("/pet")
     @Operation(summary = "Updates pet info in database")
     public void updatePet(@RequestBody PetUpdateRequest petUpdateRequest) {

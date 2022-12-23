@@ -1,5 +1,6 @@
 package com.example.petmanagement.domain.pet;
 
+import com.example.petmanagement.business.dropdowninfo.PetTypeResponse;
 import com.example.petmanagement.business.pet.PetRequest;
 import com.example.petmanagement.business.pet.PetResponse;
 import com.example.petmanagement.business.pet.PetUpdateRequest;
@@ -34,7 +35,5 @@ public interface PetMapper {
     @Mapping(source = "petColorId", target = "petColor.id")
     Pet petUpdate(PetUpdateRequest petUpdateRequest);
 
-//    @InheritConfiguration(name = "petUpdate")
-//    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-//    Pet partialUpdate(PetUpdateRequest petUpdateRequest, @MappingTarget Pet pet);
+    PetTypeResponse toPetType(PetType petType);
 }

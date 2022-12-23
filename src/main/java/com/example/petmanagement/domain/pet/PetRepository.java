@@ -15,7 +15,6 @@ public interface PetRepository extends JpaRepository<Pet, Integer> {
             where p.id = ?6""")
     void updatePetById(PetColor petColor, PetType petType, PetCountry petCountry, String name, Long code, Integer id);
 
-
     @Query("select p from Pet p where p.user.id = ?1")
     List<Pet> findByUserId(Integer id);
 

@@ -13,6 +13,15 @@ public class PetService {
     private PetRepository petRepository;
 
     @Resource
+    private PetTypeRepository petTypeRepository;
+
+    @Resource
+    private PetCountryRepository petCountryRepository;
+
+    @Resource
+    private PetColorRepository petColorRepository;
+
+    @Resource
     private PetMapper petMapper;
 
 
@@ -28,5 +37,18 @@ public class PetService {
     public void updatePet(Pet pet) {
         petRepository.updatePetById(pet.getPetColor(),
                 pet.getPetType(), pet.getPetCountry(), pet.getName(), pet.getCode(), pet.getId());
+    }
+
+
+    public List<PetType> getPetTypeInfo() {
+        return petTypeRepository.findAll();
+    }
+
+    public List<PetCountry> getPetCountryInfo() {
+        return petCountryRepository.findAll();
+    }
+
+    public List<PetColor> getPetColorInfo() {
+        return petColorRepository.findAll();
     }
 }
