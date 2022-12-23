@@ -5,6 +5,7 @@ import com.example.petmanagement.validation.Validation;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,6 +21,8 @@ public class UserService {
     }
 
     public void addUser(User user) {
+        List<User> allUsers = userRepository.findAll();
+        Validation.validateUserNameExists(user, allUsers);
         userRepository.save(user);
     }
 }
