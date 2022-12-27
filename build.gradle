@@ -2,11 +2,13 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.6'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.liquibase.gradle' version '2.0.4'
 }
+apply plugin: "org.liquibase.gradle"
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '17'
+sourceCompatibility = '19'
 
 configurations {
 	compileOnly {
@@ -24,16 +26,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
-//	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	//Swagger
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
-	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
 	implementation group: 'io.swagger.core.v3', name: 'swagger-annotations', version: '2.2.7'
-	//  MapStruct
 	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+	liquibaseRuntime 'org.liquibase:liquibase-core:4.18.0'
+	liquibaseRuntime 'com.h2database:h2'
 }
 
 compileJava {

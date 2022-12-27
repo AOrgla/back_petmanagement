@@ -13,28 +13,32 @@ public class PetController {
     @Resource
     private PetManagementService petManagementService;
 
+    @CrossOrigin
     @PostMapping("/pet")
     @Operation(summary ="Lets user add pets to the database")
     public void addPet(@RequestBody PetRequest petRequest) {
         petManagementService.addPet(petRequest);
     }
 
+    @CrossOrigin
     @GetMapping("/pet")
     @Operation(summary = "Retrieves user's pets data from database")
     public List<PetResponse> getPetInfo(@RequestParam Integer userId) {
         return petManagementService.getPetsInfo(userId);
     }
 
-    @GetMapping("/petdropdown")
-    @Operation(summary = "Retrieves data from database to populate drop-down menus")
-    public void getPetInfo() {
-
-    }
-
+    @CrossOrigin
     @PutMapping("/pet")
     @Operation(summary = "Updates pet info in database")
     public void updatePet(@RequestBody PetUpdateRequest petUpdateRequest) {
         petManagementService.updatePet(petUpdateRequest);
+    }
+
+    @CrossOrigin
+    @DeleteMapping("/pet")
+    @Operation(summary = "Let's user delete pet from database")
+    public void deletePet(@RequestParam Long code) {
+        petManagementService.deletePet(code);
     }
 
 }

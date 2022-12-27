@@ -13,18 +13,18 @@ import java.io.Serializable;
 public class PetResponse implements Serializable {
     private final Integer id;
     private final Integer userId;
-    private final Integer ColorId;
+    private final Integer colorId;
     @Size(max = 255)
     @NotNull
-    private final String Color;
-    private final Integer TypeId;
+    private final String color;
+    private final Integer typeId;
     @Size(max = 255)
     @NotNull
-    private final String Type;
-    private final Integer CountryId;
+    private final String type;
+    private final Integer countryId;
     @Size(max = 255)
     @NotNull
-    private final String Country;
+    private final String country;
     @Size(max = 255)
     @NotNull
     private final String name;
