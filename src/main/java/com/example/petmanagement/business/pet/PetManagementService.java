@@ -30,4 +30,8 @@ public class PetManagementService {
         Pet pet = petMapper.petUpdate(petUpdateRequest);
         petService.updatePet(pet);
     }
+
+    public void deletePet(Long code) {
+        petService.deletePet(code);
+    }
 }
