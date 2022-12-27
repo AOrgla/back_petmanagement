@@ -15,6 +15,7 @@ public class ContactService {
 
     public void addContact(Contact contact) {
         List<Contact> allContacts = contactRepository.findAll();
+        Validation.contactFormValidation(contact);
         Validation.validateEmailExists(contact, allContacts);
         contactRepository.save(contact);
     }

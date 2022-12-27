@@ -17,13 +17,11 @@ public class DropDownManagementService {
     private PetService petService;
 
     public List<PetType> getPetTypeInfo() {
-        List<PetType> petTypeInfo = petService.getPetTypeInfo();
-        return petTypeInfo;
+        return petService.getPetTypeInfo();
     }
 
     public List<PetCountry> getPetCountryInfo() {
-        List<PetCountry> petCountryInfo = petService.getPetCountryInfo();
-        return petCountryInfo;
+        return petService.getPetCountryInfo();
     }
 
     public List<PetColor> getPetColorInfo() {

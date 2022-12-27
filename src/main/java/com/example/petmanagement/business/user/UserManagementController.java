@@ -12,13 +12,14 @@ public class UserManagementController {
 
     @Resource
     private UserManagementService userManagementService;
-
+    @CrossOrigin
     @GetMapping("/login")
     @Operation(summary = "Login to user account. Username: John, password: 123 for testing, This user has 3 pets default")
     public LoginResponse login(@RequestParam String username, @RequestParam String password) {
         return userManagementService.login(username, password);
     }
 
+    @CrossOrigin
     @PostMapping("/register")
     @Operation(summary = "For user registration")
     public void register(@RequestBody RegisterRequest registerRequest) {

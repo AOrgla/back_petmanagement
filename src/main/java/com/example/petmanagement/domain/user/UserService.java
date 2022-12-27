@@ -1,6 +1,7 @@
 package com.example.petmanagement.domain.user;
 
 
+import com.example.petmanagement.domain.contact.Contact;
 import com.example.petmanagement.validation.Validation;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +21,10 @@ public class UserService {
         return userOptional.get();
     }
 
-    public void addUser(User user) {
+    public void addUser(User user, Contact contact) {
         List<User> allUsers = userRepository.findAll();
+        Validation.formValidation(user);
+        Validation.validateEmailFormat(contact);
         Validation.validateUserNameExists(user, allUsers);
         userRepository.save(user);
     }

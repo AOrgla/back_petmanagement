@@ -1,6 +1,7 @@
 package com.example.petmanagement.domain.pet;
 
 import com.example.petmanagement.business.pet.PetResponse;
+import com.example.petmanagement.validation.Validation;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -31,14 +32,15 @@ public class PetService {
     }
 
     public void addPet(Pet pet) {
+        List<Pet> allPets = petRepository.findAll();
+        Validation.validatePetExists(pet, allPets);
         petRepository.save(pet);
     }
 
     public void updatePet(Pet pet) {
-        petRepository.updatePetById(pet.getPetColor(),
-                pet.getPetType(), pet.getPetCountry(), pet.getName(), pet.getCode(), pet.getId());
+        petRepository.updatePetByCode(pet.getPetColor(),
+                pet.getPetType(), pet.getPetCountry(), pet.getName(), pet.getCode());
     }
-
 
     public List<PetType> getPetTypeInfo() {
         return petTypeRepository.findAll();
@@ -50,5 +52,9 @@ public class PetService {
 
     public List<PetColor> getPetColorInfo() {
         return petColorRepository.findAll();
+    }
+
+    public void deletePet(Long code) {
+        petRepository.deleteByCode(code);
     }
 }

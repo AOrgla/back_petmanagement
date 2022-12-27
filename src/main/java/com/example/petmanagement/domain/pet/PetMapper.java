@@ -1,6 +1,5 @@
 package com.example.petmanagement.domain.pet;
 
-import com.example.petmanagement.business.dropdowninfo.PetTypeResponse;
 import com.example.petmanagement.business.pet.PetRequest;
 import com.example.petmanagement.business.pet.PetResponse;
 import com.example.petmanagement.business.pet.PetUpdateRequest;
@@ -17,14 +16,14 @@ public interface PetMapper {
     @Mapping(source = "userId", target = "user.id")
     Pet toEntity(PetRequest petRequest);
 
-    @Mapping(source = "petColor.color", target = "Color")
-    @Mapping(source = "petType.type", target = "Type")
-    @Mapping(source = "petCountry.country", target = "Country")
+    @Mapping(source = "petColor.color", target = "color")
+    @Mapping(source = "petType.type", target = "type")
+    @Mapping(source = "petCountry.country", target = "country")
     @Mapping(source = "id", target = "id")
     @Mapping(source = "user.id", target = "userId")
-    @Mapping(source = "petCountry.id", target = "CountryId")
-    @Mapping(source = "petType.id", target = "TypeId")
-    @Mapping(source = "petColor.id", target = "ColorId")
+    @Mapping(source = "petCountry.id", target = "countryId")
+    @Mapping(source = "petType.id", target = "typeId")
+    @Mapping(source = "petColor.id", target = "colorId")
     PetResponse toDto(Pet pet);
 
     List<PetResponse> toDtos(List<Pet> pets);
@@ -35,5 +34,4 @@ public interface PetMapper {
     @Mapping(source = "petColorId", target = "petColor.id")
     Pet petUpdate(PetUpdateRequest petUpdateRequest);
 
-    PetTypeResponse toPetType(PetType petType);
 }
