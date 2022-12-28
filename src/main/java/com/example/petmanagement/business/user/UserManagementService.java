@@ -1,5 +1,6 @@
 package com.example.petmanagement.business.user;
 
+import com.example.petmanagement.business.user.login.LoginRequest;
 import com.example.petmanagement.business.user.login.LoginResponse;
 import com.example.petmanagement.business.user.register.RegisterRequest;
 import com.example.petmanagement.domain.contact.Contact;
@@ -26,8 +27,8 @@ public class UserManagementService {
     @Resource
     private ContactMapper contactMapper;
 
-    public LoginResponse login(String username, String password) {
-        User user = userService.getValidUser(username, password);
+    public LoginResponse login(LoginRequest loginRequest) {
+        User user = userService.getValidUser(loginRequest.getUsername(), loginRequest.getPassword());
         return userMapper.toLoginResponse(user);
     }
 
