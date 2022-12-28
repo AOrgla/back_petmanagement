@@ -10,7 +10,8 @@ public enum PetError {
     EMAIL_EXISTS("Mail address is already in use", "003"),
     EMPTY_FIELDS("One or more required fields are empty", "004"),
     EMAIL_VALIDATION("Incorrect email format", "005"),
-    PET_EXISTS("Pet with this code already exists", "006");
+    PET_EXISTS("Pet with this code already exists", "006"),
+    INVALID_CODE("Minimum length for code is 5 digits", "007");
 
     private final String message;
     private final String errorCode;

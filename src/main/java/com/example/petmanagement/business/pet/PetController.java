@@ -37,8 +37,14 @@ public class PetController {
     @CrossOrigin
     @DeleteMapping("/pet")
     @Operation(summary = "Let's user delete pet from database")
-    public void deletePet(@RequestParam Long code) {
-        petManagementService.deletePet(code);
+    public void deletePet(@RequestParam Long petCode) {
+        petManagementService.deletePet(petCode);
     }
 
+    @CrossOrigin
+    @GetMapping("/petinfo")
+    @Operation(summary = "Retrieves info for single pet")
+    public PetResponse getSinglePetInfo(@RequestParam Long petCode) {
+        return petManagementService.getSinglePetInfo(petCode);
+    }
 }

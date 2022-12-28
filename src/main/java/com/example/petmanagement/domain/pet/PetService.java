@@ -34,6 +34,7 @@ public class PetService {
     public void addPet(Pet pet) {
         List<Pet> allPets = petRepository.findAll();
         Validation.validatePetExists(pet, allPets);
+        Validation.validateCodeLength(pet);
         petRepository.save(pet);
     }
 
@@ -56,5 +57,10 @@ public class PetService {
 
     public void deletePet(Long code) {
         petRepository.deleteByCode(code);
+    }
+
+    public PetResponse getSinglePetInfo(Long petCode) {
+        Pet pet =  petRepository.findByCode(petCode);
+        return petMapper.toDto(pet);
     }
 }

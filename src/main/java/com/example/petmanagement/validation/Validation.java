@@ -10,6 +10,7 @@ import java.util.Optional;
 
 public class Validation {
 
+
     public static void validateUserCredentials(Optional<User> userOptional) {
         if (userOptional.isEmpty()) {
             throw new BusinessException(PetError.INCORRECT_CREDENTIALS.getMessage(), PetError.INCORRECT_CREDENTIALS.getErrorCode());
@@ -23,7 +24,7 @@ public class Validation {
         } else {
             for (Contact allContact : allContacts) {
                 if (allContact.getEmail().equals(contact.getEmail())) {
-                    throw new BusinessException(PetError.EMAIL_EXISTS.getMessage(), PetError.USERNAME_EXISTS.getErrorCode());
+                    throw new BusinessException(PetError.EMAIL_EXISTS.getMessage(), PetError.EMAIL_EXISTS.getErrorCode());
                 }
             }
         }
@@ -62,6 +63,12 @@ public class Validation {
             if (pet.getCode() == (long) singlePet.getCode()) {
                 throw new BusinessException(PetError.PET_EXISTS.getMessage(), PetError.PET_EXISTS.getErrorCode());
             }
+        }
+    }
+
+    public static void validateCodeLength(Pet pet) {
+        if (pet.getCode() < 10000) {
+            throw new BusinessException(PetError.INVALID_CODE.getMessage(), PetError.INVALID_CODE.getErrorCode());
         }
     }
 }

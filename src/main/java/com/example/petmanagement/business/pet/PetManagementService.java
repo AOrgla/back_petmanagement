@@ -34,4 +34,8 @@ public class PetManagementService {
     public void deletePet(Long code) {
         petService.deletePet(code);
     }
+
+    public PetResponse getSinglePetInfo(Long petCode) {
+        return petService.getSinglePetInfo(petCode);
+    }
 }

@@ -33,7 +33,6 @@ public class UserManagementService {
     }
 
     public void addUser(RegisterRequest registerRequest) {
-
         Contact contact = contactMapper.registerRequestToContact(registerRequest);
         User user = userMapper.registerRequestToUser(registerRequest);
         contact.setUser(user);

@@ -23,4 +23,12 @@ public interface PetRepository extends JpaRepository<Pet, Integer> {
     @Query("delete from Pet p where p.code = ?1")
     void deleteByCode(Long code);
 
+    @Query("""
+            select p from Pet p
+            where p.code = ?1
+            order by p.petColor.id, p.petColor.color, p.petType.id, p.petType.type, p.petCountry.id, p.petCountry.country, p.name""")
+    Pet findByCode(Long code);
+
+
+
 }
