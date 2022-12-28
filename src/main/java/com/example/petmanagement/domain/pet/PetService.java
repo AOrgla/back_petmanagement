@@ -2,9 +2,9 @@ package com.example.petmanagement.domain.pet;
 
 import com.example.petmanagement.business.pet.PetResponse;
 import com.example.petmanagement.validation.Validation;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service

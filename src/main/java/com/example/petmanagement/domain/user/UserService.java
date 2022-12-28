@@ -4,8 +4,9 @@ package com.example.petmanagement.domain.user;
 import com.example.petmanagement.domain.contact.Contact;
 import com.example.petmanagement.domain.contact.ContactRepository;
 import com.example.petmanagement.validation.Validation;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
+
 import java.util.List;
 import java.util.Optional;
 

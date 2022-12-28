@@ -3,9 +3,9 @@ package com.example.petmanagement.business.pet;
 import com.example.petmanagement.domain.pet.Pet;
 import com.example.petmanagement.domain.pet.PetMapper;
 import com.example.petmanagement.domain.pet.PetService;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service

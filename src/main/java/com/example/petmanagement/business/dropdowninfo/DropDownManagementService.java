@@ -4,9 +4,9 @@ import com.example.petmanagement.domain.pet.PetColor;
 import com.example.petmanagement.domain.pet.PetCountry;
 import com.example.petmanagement.domain.pet.PetService;
 import com.example.petmanagement.domain.pet.PetType;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 @Service

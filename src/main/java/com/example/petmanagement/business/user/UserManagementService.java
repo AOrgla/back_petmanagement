@@ -9,9 +9,8 @@ import com.example.petmanagement.domain.contact.ContactService;
 import com.example.petmanagement.domain.user.User;
 import com.example.petmanagement.domain.user.UserMapper;
 import com.example.petmanagement.domain.user.UserService;
+import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 @Service
 public class UserManagementService {
