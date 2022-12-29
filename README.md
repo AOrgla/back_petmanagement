@@ -17,6 +17,7 @@ To log in, use:
 * password: 123
 
 John has three pets in his pets list.
+
 Other users are:
 * username: Mihkel
 * password: 123
@@ -31,7 +32,15 @@ These users have empty lists.
 * User registration with input field validation
 * User login
 * User can add pets
-* User can edit pets (every property except database Pet code)
+* User can edit pets (every property except Pet code)
 * User can delete pets
 
-The application was created using Spring Boot 2.7.6, Java 19.
+The application was created using:
+* Spring Boot 3.0.1
+* Java 19
+* Spring Web
+* Lombok
+* Spring Data JPA
+* H2 Database
+* Liquibase Migration
+* Mapstruct
