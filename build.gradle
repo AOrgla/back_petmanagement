@@ -45,3 +45,13 @@ compileJava {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+liquibase {
+	activities {
+		main {
+			changeLogFile 'changelog-master.xml'
+			url 'jdbc:h2:db/liquibase_workshop;FILE_LOCK=NO'
+			username 'sa'
+			password ''
+		}
+	}
+}
